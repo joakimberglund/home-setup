@@ -1,0 +1,23 @@
+
+/etc/docker/daemon.json
+"insecure-registries":["host:port"]
+
+# /etc/rancher/k3s/registries.yaml
+#
+# No need for TLS/HTTPS for the local registry
+# https://docs.k3s.io/installation/private-registry
+#
+mirrors:
+ docker.io:
+    endpoint:
+      - "http://registry.cube.local:5000"
+  registryi.cube.local:
+    endpoint:
+      - "http://registry.cube.local:5000"
+
+
+systemctl edit --full k3s
+Addera --disable=servicelb sist
+
+
+
