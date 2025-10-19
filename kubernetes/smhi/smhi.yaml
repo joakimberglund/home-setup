@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+    name: smhi
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: smhi
+  namespace: smhi
+spec:
+  schedule: "10 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: smhi
+            image: 192.168.0.77:5000/smhi:latest
+            imagePullPolicy: IfNotPresent
+            command:
+            - /bin/sh
+            - -c
+            - /test.py
+          restartPolicy: OnFailure
