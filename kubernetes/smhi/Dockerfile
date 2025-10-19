@@ -4,9 +4,8 @@ FROM frolvlad/alpine-python3:latest
 RUN pip3 install requests && \
     rm -r /root/.cache
 
-ADD smhi.py test.py /
-RUN chmod 777 /smhi.py
+COPY smhi.py /smhi.py
+COPY test.py /test.py
+COPY run.sh /run.sh
+RUN chmod 777 /smhi.py /run.sh
 
-
-
-ENTRYPOINT ["python", "/test.py"]
