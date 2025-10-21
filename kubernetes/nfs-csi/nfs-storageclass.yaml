@@ -8,4 +8,7 @@ parameters:
   server: nas
   share: /volume1/kubernetes
 reclaimPolicy: Retain
-volumeBindingMode: Immediate
+volumeBindingMode: WaitForFirstConsumer
+allowVolumeExpansion: true
+mountOptions:
+  - nfsvers=4.1
