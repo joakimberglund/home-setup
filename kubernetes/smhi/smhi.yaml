@@ -16,7 +16,7 @@ spec:
         spec:
           containers:
           - name: smhi
-            image: registry.cube.local:5000/smhi:latest
+            image: smhi:latest
             imagePullPolicy: Always
             command:
             - /bin/sh
