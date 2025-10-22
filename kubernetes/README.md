@@ -32,4 +32,5 @@ curl -sfL https://get.k3s.io | sh - --write-kubeconfig-mode 644 --disable=servic
 ## SMHI puller
 [Instructions](smhi/README.md)
 
-
+## Omada Software Controller
+[Instructions](omada/README.md)
