@@ -90,6 +90,7 @@ data:
     [data]
       dir = "/var/lib/influxdb/data"
       wal-dir = "/var/lib/influxdb/wal"
+      index-version = "tsi1"
       series-id-set-cache-size = 100
 ---
 apiVersion: v1
