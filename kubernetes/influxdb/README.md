@@ -9,7 +9,7 @@ influxd backup -portable /tmp/influxdb-backup
 ```
 ### Restore
 ```
-influxd restore -portable -host 203.0.113.0:8088 /tmp/influxdb-backup
+influxd restore -portable -host influxdb:8088 /tmp/influxdb-backup
 
 rm -rf /tmp/influxdb-backup
 ```
