@@ -20,7 +20,11 @@ curl -sfL https://get.k3s.io | sh - --write-kubeconfig-mode 644 --disable=servic
 ## InfluxDB
 [Instructions](influxdb/README.md)
 
+## MariaDB
+[Instructions](mariadb/README.md)
 
+## Grafana
+[Instructions](grafana/README.md)
 
 
 
