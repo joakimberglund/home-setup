@@ -26,6 +26,10 @@ curl -sfL https://get.k3s.io | sh - --write-kubeconfig-mode 644 --disable=servic
 ## Grafana
 [Instructions](grafana/README.md)
 
+## Telegraf
+[Instructions](telegraf/README.md)
 
+## SMHI puller
+[Instructions](smhi/README.md)
 
 
