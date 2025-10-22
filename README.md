@@ -3,19 +3,26 @@ My home setup, among other things kubernetes
 
 # Kubernetes
 
+## K3S
+
+## Metal-lb
+
+## Promtail
+
+## Docker-registry
+
+## Docker-registry-ui
+
+## Loki
+
 ## InfluxDB
 
 ## Grafana
 
 ## MariaDB
 
-## Omada
+## Omada Software Controller
 
 ## SMHI cron
-
-
-
-# Div
-## SMHI
-Python script for fetching SMHI forcast data and pushing it to a InfluxDB v1 database
+Python script for fetching SMHI forcast data based on a lat/long location and pushing it to a InfluxDB v1 database
 
