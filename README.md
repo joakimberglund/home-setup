@@ -7,8 +7,6 @@ My home setup, among other things kubernetes
 
 ## Metal-lb
 
-## Promtail
-
 ## Docker-registry
 
 ## Docker-registry-ui
