@@ -52,7 +52,7 @@ spec:
       containers:
         - name: mariadb
           image: docker-registry1.mariadb.com/library/mariadb:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           env:
           - name: MARIADB_ALLOW_EMPTY_ROOT_PASSWORD
             value: "true"
