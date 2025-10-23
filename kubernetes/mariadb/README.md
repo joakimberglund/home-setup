@@ -33,6 +33,7 @@ exit;
 ```
 systemctl stop maridb
 systemctl disable mariadb
+```
 
 ### Removing the old installation
 Before starting this step verify that everything works as it should!
