@@ -17,7 +17,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/data/k3s/volumes/influxdb/data"
+    path: "/data/influxdb"
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim

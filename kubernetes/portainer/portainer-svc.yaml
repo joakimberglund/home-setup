@@ -13,4 +13,14 @@ spec:
       protocol: TCP
       port: 9000
       targetPort: 9000
+    - name: https
+      nodePort: 30779
+      port: 9443
+      protocol: TCP
+      targetPort: 9443
+    - name: edge
+      nodePort: 30776
+      port: 30776
+      protocol: TCP
+      targetPort: 30776
   loadBalancerIP: 192.168.0.73
