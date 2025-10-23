@@ -10,6 +10,7 @@ To migrate the current data do a backup on the current database server then rest
 ### Backup
 ```
 mysqldump -u root -p --all-databases > all.sql
+```
 
 ### Restore
 ```
