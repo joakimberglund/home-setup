@@ -1,19 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
+metadata:
+  name: portainer
+  namespace: argocd
 spec:
   project: default
-  source:
-  -  repoURL: 'https://portainer.github.io/k8s/'
+  sources:
+  - repoURL: 'https://portainer.github.io/k8s/'
     chart: portainer
     targetRevision: 2.33.1
     helm:
-      valueFile:
+      valueFiles:
         - $values/kubernetes/portainer/values.yaml
   - repoURL: "https://github.com/joakimberglund/home-setup.git"
     targetRevision: main
     ref: values
   destination:
     server: https://kubernetes.default.svc
-    namespace: influxdb
+    namespace: portainer
   syncPolicy:
     automated: {}
