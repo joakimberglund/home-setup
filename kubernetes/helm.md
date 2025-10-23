@@ -6,7 +6,7 @@ This prepair the environment and installs helm
 ```
 sudo bash
 apt -y install git
-export KUBECONFIG=/.kube/config
+export KUBECONFIG=/root/.kube/config
 mkdir ~/.kube 2> /dev/null
 k3s kubectl config view --raw > "$KUBECONFIG"
 chmod 600 "$KUBECONFIG"
