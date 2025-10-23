@@ -14,7 +14,7 @@ curl -sfL https://get.k3s.io | sh - --write-kubeconfig-mode 644 --disable=servic
 ## Metal-lb
 Kubernetes LoadBalancer
 
-[Install](metal-lb/metal-lb.sh)
+[Install](metal-lb/README.md)
 
 ## Portainer
 Kubernetes GUI
