@@ -8,6 +8,9 @@ https://docs.k3s.io/quick-start
 curl -sfL https://get.k3s.io | sh - --write-kubeconfig-mode 644 --disable=servicelb 
 ```
 
+## Disk setup (PVC)
+[Install](disk/README.md)
+
 ## Helm
 [Install](helm.md)
 
