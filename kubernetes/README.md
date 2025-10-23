@@ -6,6 +6,7 @@ https://docs.k3s.io/quick-start
 ### Install
 ```
 curl -sfL https://get.k3s.io | sh -s - --write-kubeconfig-mode 644 --disable servicelb
+echo "KUBECONFIG=/etc/rancher/k3s/k3s.yaml" >> /etc/environment
 ```
 
 ## Helm
