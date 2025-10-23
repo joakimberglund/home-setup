@@ -26,3 +26,17 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY 'the-new-password';
 flush privileges;
 exit;
 ```
+
+## Stopping and removing the existing database server
+
+### Stopping the database server
+```
+systemctl stop maridb
+systemctl disable mariadb
+
+### Removing the old installation
+Before starting this step verify that everything works as it should!
+```
+apt-get remove mariadb
+rm -rf /etc/mysql /var/lib/mysql
+```
