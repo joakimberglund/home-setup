@@ -17,7 +17,7 @@ Kubernetes LoadBalancer
 [Install](metal-lb/README.md)
 
 ## Argo CD
-CD/CI for kubernetes
+Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 https://rpi4cluster.com/k3s-argo-cd/
 
 kubectl create namespace argocd
