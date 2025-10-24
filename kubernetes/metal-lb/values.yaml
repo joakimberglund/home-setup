@@ -1,6 +1,5 @@
-configInline:
-  address-pools:
-   - name: default
-     protocol: layer2
-     addresses:
-     - 192.168.0.60-192.168.0.90
+address-pools:
+ - name: default
+   protocol: layer2
+   addresses:
+   - 192.168.0.60-192.168.0.90
