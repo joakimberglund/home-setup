@@ -1,4 +1,5 @@
-service:
-  type: LoadBalancer
-  loadBalancerIP: "192.168.0.73"
+controller:
+  service:
+    type: LoadBalancer
+    loadBalancerIP: "192.168.0.73"
 
