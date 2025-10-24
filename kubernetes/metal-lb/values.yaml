@@ -1,6 +1,5 @@
 address-pools:
-  namespace: metallb
-  - name: default
+  - name: metallb-pool
     protocol: layer2
     addresses:
     - 192.168.0.60-192.168.0.90
