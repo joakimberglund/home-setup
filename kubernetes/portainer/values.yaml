@@ -1,3 +1,5 @@
 service:
-  type: LoadBalancer
-  loadBalancerIP: 192.168.0.73
+  spec:
+    type: LoadBalancer
+    loadBalancerIP: 192.168.0.73
+
