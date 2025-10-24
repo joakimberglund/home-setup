@@ -1,5 +1,5 @@
 address-pools:
-  namesapce: metallb
+  namespace: metallb
   - name: default
     protocol: layer2
     addresses:
