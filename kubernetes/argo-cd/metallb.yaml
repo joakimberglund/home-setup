@@ -8,7 +8,7 @@ spec:
   sources:
   - repoURL: 'https://metallb.github.io/metallb/'
     chart: metallb
-    targetRevision: latest
+    targetRevision: 0.15.2
     helm:
       valueFiles:
         - $values/kubernetes/metallb/values.yaml
