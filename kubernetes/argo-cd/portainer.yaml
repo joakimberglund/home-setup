@@ -20,3 +20,5 @@ spec:
     namespace: portainer
   syncPolicy:
     automated: {}
+    syncOptions:
+    - CreateNamespace=true
