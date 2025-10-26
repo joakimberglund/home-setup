@@ -16,7 +16,7 @@ spec:
         spec:
           containers:
           - name: smhi
-            image: 192.168.0.74:5000/smhi:latest
+            image: registry.cube.local:5000/smhi:latest
             imagePullPolicy: Always
             command:
             - /bin/sh
