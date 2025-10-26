@@ -1,5 +1,5 @@
 service:
   type: LoadBalancer
   annotations:
-    service.beta.kubernetes.io/do-loadbalancer-hostname: "portainer"
+    service.kubernetes.io/do-loadbalancer-hostname: "portainer"
 
