@@ -6,15 +6,12 @@ metadata:
 spec:
   project: default
   sources:
-  - repoURL: 'https://portainer.github.io/k8s/'
+  - repoURL: 'https://raw.githubusercontent.com/portainer/k8s/master/deploy/manifests/portainer/portainer-lb.yaml'
     chart: portainer
     targetRevision: 2.33.1
-    helm:
-      valueFiles:
-        - $values/kubernetes/components/portainer/values.yaml
   - repoURL: "https://github.com/joakimberglund/home-setup.git"
     targetRevision: HEAD
-    ref: values
+    path: "kubernetes/components/portainer"
   destination:
     server: https://kubernetes.default.svc
     namespace: portainer
