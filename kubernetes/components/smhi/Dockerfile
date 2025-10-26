@@ -1,6 +1,5 @@
 FROM frolvlad/alpine-python3:latest
 
-
 RUN pip3 install requests && \
     rm -r /root/.cache
 
