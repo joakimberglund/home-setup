@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: docker-registry
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: "https://github.com/joakimberglund/home-setup.git"
+    targetRevision: main
+    path: "kubernetes/components/docker-registry"
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: docker-registry
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true

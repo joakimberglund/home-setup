@@ -1,9 +1,4 @@
 apiVersion: v1
-kind: Namespace
-metadata:
-    name: docker-registry
----
-apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: docker-registry-data-pv
@@ -17,7 +12,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/data/k3s/volumes/docker-registry/data"
+    path: "/data/docker-registry"
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -53,25 +48,15 @@ spec:
       - name: registry
         image: registry:2
         imagePullPolicy: IfNotPresent
-        env:
-        - name: REGISTRY_HTTP_TLS_CERTIFICATE
-          value: "/certs/tls.crt"
-        - name: REGISTRY_HTTP_TLS_KEY
-          value: "/certs/tls.key"
         ports:
         - containerPort: 5000
         volumeMounts:
         - name: data
           mountPath: /var/lib/registry
-        - name: certs
-          mountPath: /certs
       volumes:
         - name: data
           persistentVolumeClaim:
             claimName: docker-registry-data-pvc
-        - name: certs
-          secret:
-            secretName: docker-registry-tls-cert
 ---
 apiVersion: v1
 kind: Service
