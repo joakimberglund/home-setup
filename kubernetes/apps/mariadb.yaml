@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/joakimberglund/home-setup.git'
     targetRevision: main
-    path: "kubernetes/mariadb"
+    path: "kubernetes/components/mariadb"
   destination:
     server: https://kubernetes.default.svc
     namespace: mariadb

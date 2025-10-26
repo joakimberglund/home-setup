@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/joakimberglund/home-setup.git'
     targetRevision: main
-    path: "kubernetes/grafana"
+    path: "kubernetes/components/grafana"
   destination:
     server: https://kubernetes.default.svc
     namespace: grafana

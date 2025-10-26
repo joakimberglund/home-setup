@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/joakimberglund/home-setup.git'
     targetRevision: main
-    path: "kubernetes/influxdb"
+    path: "kubernetes/components/influxdb"
   destination:
     server: https://kubernetes.default.svc
     namespace: influxdb
