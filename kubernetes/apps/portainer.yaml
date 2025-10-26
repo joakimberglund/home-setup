@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-  - repoURL: "https://github.com/joakimberglund/home-setup.git"
-    targetRevision: HEAD
+    repoURL: "https://github.com/joakimberglund/home-setup.git"
+    targetRevision: main
     path: "kubernetes/components/portainer"
   destination:
     server: https://kubernetes.default.svc
