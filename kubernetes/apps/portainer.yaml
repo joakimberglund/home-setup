@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   sources:
-  - repoURL: 'https://raw.githubusercontent.com/portainer/k8s/master/deploy/manifests/portainer/portainer-lb.yaml'
+  - repoURL: 'https://downloads.portainer.io/ce-lts/portainer-lb.yaml'
     chart: portainer
     targetRevision: 2.33.1
   - repoURL: "https://github.com/joakimberglund/home-setup.git"
