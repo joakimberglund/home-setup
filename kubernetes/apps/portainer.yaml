@@ -5,10 +5,7 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  sources:
-  - repoURL: 'https://downloads.portainer.io/ce-lts/portainer-lb.yaml'
-    chart: portainer
-    targetRevision: 2.33.1
+  source:
   - repoURL: "https://github.com/joakimberglund/home-setup.git"
     targetRevision: HEAD
     path: "kubernetes/components/portainer"
