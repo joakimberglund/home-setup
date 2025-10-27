@@ -138,11 +138,11 @@ spec:
   sessionAffinity: None
   type: LoadBalancer
   ports:
-    - port: http
+    - port: portainer
       targetPort: 9000
       protocol: TCP
       name: http
-    - port: https
+    - port: 9443
       targetPort: 9443
       protocol: TCP
       name: https
