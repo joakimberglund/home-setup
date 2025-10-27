@@ -57,8 +57,8 @@ spec:
             value: "true"
           - name: SHOW_CONTENT_DIGEST
             value: "true"
-          - name: NGINX_PROXY_PASS_URL
-            value: "https://registry.cube.local:5000"
+          - name: REGISTRY_URL
+            value: "http://192.168.0.74:5000"
           - name: SHOW_CATALOG_NB_TAGS
             value: "true"
           - name: CATALOG_MIN_BRANCHES
