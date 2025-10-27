@@ -15,6 +15,18 @@ mirrors:
     endpoint:
       - "http://registry.cube.local:5000"
 
+mirrors:
+  "*":
+    endpoint:
+      - "http://registry.cube.local:5000"
+configs:
+  "docker.io":
+  "*":
+    tls:
+      insecure_skip_verify: true
+
+
+
 
 systemctl edit --full k3s
 Addera --disable=servicelb sist

@@ -48,18 +48,18 @@ spec:
   sessionAffinity: None
   type: LoadBalancer
   ports:
-    - port: 9000
+    - port: http
       targetPort: 9000
       protocol: TCP
       name: http
-    - port: 9443
+    - port: https
       targetPort: 9443
       protocol: TCP
       name: https
-    - port: 8000
+    - port: tcp-edge
       targetPort: 8000
       protocol: TCP
-      name: edge
+      name: tcp-edge
 ---
 # Source: portainer/templates/serviceaccount.yaml
 apiVersion: v1
