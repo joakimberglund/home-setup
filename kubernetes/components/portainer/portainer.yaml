@@ -35,32 +35,6 @@ spec:
     requests:
       storage: 10Gi
 ---
-apiVersion: v1
-kind: Service
-metadata:
-  name: portainer
-  namespace: portainer
-spec:
-  selector:
-    app: portainer
-  allocateLoadBalancerNodePorts: true
-  loadBalancerIP: 192.168.0.73
-  sessionAffinity: None
-  type: LoadBalancer
-  ports:
-    - port: http
-      targetPort: 9000
-      protocol: TCP
-      name: http
-    - port: https
-      targetPort: 9443
-      protocol: TCP
-      name: https
-    - port: tcp-edge
-      targetPort: 8000
-      protocol: TCP
-      name: tcp-edge
----
 # Source: portainer/templates/serviceaccount.yaml
 apiVersion: v1
 kind: ServiceAccount
@@ -150,3 +124,30 @@ spec:
               path: /
               port: 9443
               scheme: HTTPS
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: portainer
+  namespace: portainer
+spec:
+  selector:
+    app: portainer
+  allocateLoadBalancerNodePorts: true
+  loadBalancerIP: 192.168.0.73
+  sessionAffinity: None
+  type: LoadBalancer
+  ports:
+    - port: http
+      targetPort: 9000
+      protocol: TCP
+      name: http
+    - port: https
+      targetPort: 9443
+      protocol: TCP
+      name: https
+    - port: tcp-edge
+      targetPort: 8000
+      protocol: TCP
+      name: tcp-edge
+---
