@@ -5,10 +5,8 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  sources:
-  - repoURL: '"https://github.com/argoproj/argo-workflows/releases/download/v3.7.3/quick-start-minimal.yaml'
-    targetRevision: 3.7.3
-  - repoURL: "https://github.com/joakimberglund/home-setup.git"
+  source:
+    repoURL: "https://github.com/joakimberglund/home-setup.git"
     targetRevision: main
     path: "kubernetes/components/argo-workflows""
   destination:
