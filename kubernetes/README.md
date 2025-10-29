@@ -12,15 +12,9 @@ echo "KUBECONFIG=/etc/rancher/k3s/k3s.yaml" >> /etc/environment
 ## Helm
 [Install](helm.md)
 
-## Metal-lb
-Kubernetes LoadBalancer
-
-[Install](metal-lb/README.md)
-
 ## Argo CD
 Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 https://rpi4cluster.com/k3s-argo-cd/
-
 ### Install
 ```
 cd home-setup/kubernetes
@@ -35,8 +29,6 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-arm64
 chmod a+rx /usr/local/bin/argocd
 ```
-
-
 ```
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
@@ -46,37 +38,13 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 ```
 
-## Portainer
-Kubernetes GUI
+## Apps installed via ArgoCD
 
-[Instructions](portainer/README.md)
-
-## InfluxDB
-Metrics database
-
-[Instructions](influxdb/README.md)
-
-## MariaDB
-Database...
-
-[Instructions](mariadb/README.md)
-
-## Grafana
-Metrics GUI
-
-[Instructions](grafana/README.md)
-
-## Telegraf
-Metrics collector
-
-[Instructions](telegraf/README.md)
-
-## SMHI puller
-Python script for fetching SMHI forcast data based on a lat/long location and pushing it to a InfluxDB v1 database
-
-[Instructions](smhi/README.md)
-
-## Omada Software Controller
-Controller software for Omada network hardware
-
-[Instructions](omada/README.md)
+*Metallb*:
+Docker-registry:
+Portainer:
+Influxdb:
+Grafana:
+MariaDB:
+Omada:
+SMHI cron:
