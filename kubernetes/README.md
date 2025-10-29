@@ -40,11 +40,18 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 ## Apps installed via ArgoCD
 
-*Metallb*:
+**Metallb**:
+
 Docker-registry:
+
 Portainer:
+
 Influxdb:
+
 Grafana:
+
 MariaDB:
+
 Omada:
+
 SMHI cron:
