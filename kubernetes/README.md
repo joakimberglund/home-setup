@@ -24,7 +24,7 @@ https://rpi4cluster.com/k3s-argo-cd/
 ### Install
 ```
 cd home-setup/kubernetes
-kubectl apply -f argo-cd
+kubectl apply -f argocd
 ```
 ### Get passcode
 ```
