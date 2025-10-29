@@ -1,0 +1,4 @@
+ui:
+  singleRegistry: false
+#  dockerRegistryUrl: http://registry.cube.local:5000
+
