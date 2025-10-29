@@ -21,6 +21,22 @@ Kubernetes LoadBalancer
 Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 https://rpi4cluster.com/k3s-argo-cd/
 
+### Install
+```
+cd home-setup/kubernetes
+kubectl apply -f argo-cd
+```
+### Get passcode
+```
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+```
+### Add command line tool
+```
+curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-arm64
+chmod a+rx /usr/local/bin/argocd
+```
+
+
 ```
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
@@ -28,8 +44,6 @@ kubectl patch service argocd-server -n argocd --patch '{ "spec": { "type": "Load
 
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 
-curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-arm64
-chmod a+rx /usr/local/bin/argocd
 ```
 
 ## Portainer
