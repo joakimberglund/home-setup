@@ -5,6 +5,8 @@ metadata:
   namespace: grafana
   labels:
     type: local
+  annotations:
+    link.argocd.argoproj.io/external-link: http://grafana:3000/
 spec:
   storageClassName: local-path
   capacity:
