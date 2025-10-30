@@ -49,7 +49,7 @@ def write_influxdb(out):
 
 # Fetch forecast from SMHI
 # Använd f-strängar för att korrekt bygga URL:en
-smhi_url = f"http://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/{long}/{lat}/data.json"
+smhi_url = f"http://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/{long}/lat/{lat}/data.json"
 
 try:
     r = requests.get(smhi_url, timeout=10)
