@@ -30,7 +30,7 @@ def write_influxdb( out ):
   # If in test mode print out the string
   if test_is_set:
     print(out)
-  else
+  else:
     r = requests.post(s"{URL}/write?db=smhi", data=out)
 
 # Fetch forecast from SMHI
