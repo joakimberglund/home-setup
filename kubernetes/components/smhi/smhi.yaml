@@ -20,11 +20,11 @@ spec:
             imagePullPolicy: Always
             env:
             - name: LAT
-              value: 62.406521
+              value: "62.406521"
             - name: LONG
-              value: 17.362494
+              value: "17.362494"
             - name: TEST
-              value: test
+              value: "test"
             command:
             - /bin/sh
             - -c
