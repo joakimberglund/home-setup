@@ -77,3 +77,5 @@ for nr in data["timeSeries"]:
         line_protocol = f"{param['name']},unit={param['unit']} value={param['values'][0]} {epoch_time_ns}"
 
         write_influxdb(line_protocol)
+
+
