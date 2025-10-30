@@ -31,10 +31,10 @@ def write_influxdb( out ):
   if test_is_set:
     print(out)
   else:
-    r = requests.post(s"{URL}/write?db=smhi", data=out)
+    r = requests.post(URL,"/write?db=smhi", data=out)
 
 # Fetch forecast from SMHI
-r = requests.get('http://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/f"{long}/{lat}"/data.json')
+r = requests.get("http://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/",long,"/",lat,"/data.json')
 data = r.json()
 
 for nr in  data["timeSeries"]:
