@@ -7,8 +7,10 @@ import sys
 
 #coord = "62.406521, 17.362494"
 
+URL = "http://influxdb:8086"
+
 if len(sys.argv) < 3:
-  print("Usage: python coords.py <lat> <long> [--test [value]]", file=sys.stderr)
+  print("Usage: python coords.py <lat> <long> [test]", file=sys.stderr)
     sys.exit(1)
     
   # Parse latitude and longitude (first two args)
@@ -29,7 +31,7 @@ def write_influxdb( out ):
   if test_is_set:
     print(out)
   else
-    r = requests.post("http://influxdb:8086/write?db=smhi", data=out)
+    r = requests.post(s"{URL}/write?db=smhi", data=out)
 
 # Fetch forecast from SMHI
 r = requests.get('http://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/f"{long}/{lat}"/data.json')
