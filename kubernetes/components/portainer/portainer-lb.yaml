@@ -78,6 +78,8 @@ kind: Deployment
 metadata:
   name: portainer
   namespace: portainer
+  annotations:
+    link.argocd.argoproj.io/external-link: http://portainer:9000/
   labels:
     io.portainer.kubernetes.application.stack: portainer
     app.kubernetes.io/name: portainer
