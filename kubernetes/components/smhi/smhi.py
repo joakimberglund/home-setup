@@ -11,7 +11,7 @@ URL = "http://influxdb:8086"
 
 if len(sys.argv) < 3:
   print("Usage: python coords.py <lat> <long> [test]", file=sys.stderr)
-    sys.exit(1)
+  sys.exit(1)
     
   # Parse latitude and longitude (first two args)
   try:
