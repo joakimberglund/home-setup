@@ -1,5 +1,5 @@
 #!/bin/sh
 
-python /test.py
+python /test.py $LAT $LONG $TEST
 
 exit 0
