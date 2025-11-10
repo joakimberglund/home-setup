@@ -20,7 +20,7 @@ config:
   outputs:
     - influxdb:
         urls:
-          - "http://192.168.0.75:8086"
+          - "http://influxdb:8086"
         database: "telegraf"
         retention_policy: ""
         timeout: "5s"
