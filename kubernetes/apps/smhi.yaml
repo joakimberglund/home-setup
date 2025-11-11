@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: "https://github.com/joakimberglund/home-setup.git"
+    repoURL: "https://github.com/joakimberglund/SMHI-forecast-to-InfluxDBv1.git"
     targetRevision: main
-    path: "kubernetes/components/smhi"
+    path: ""
   destination:
     server: https://kubernetes.default.svc
     namespace: smhi
