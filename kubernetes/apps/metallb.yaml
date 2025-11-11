@@ -9,12 +9,15 @@ spec:
     - repoURL: 'https://metallb.github.io/metallb/'
       chart: metallb
       targetRevision: 0.15.2
-      helm:
-        valueFiles:
-        - $values/kubernetes/components/metal-lb/values.yaml
     - repoURL: "https://github.com/joakimberglund/home-setup.git"
-      targetRevision: HEAD
-      ref: values
+      targetRevision: main
+      path: "kubernetes/components/metallb"
+#      helm:
+#        valueFiles:
+#        - $values/kubernetes/components/metal-lb/values.yaml
+#    - repoURL: "https://github.com/joakimberglund/home-setup.git"
+#      targetRevision: HEAD
+#      ref: values
   destination:
     server: https://kubernetes.default.svc
     namespace: metallb
