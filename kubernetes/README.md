@@ -24,6 +24,8 @@ Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 ```
 cd home-setup/kubernetes
 kubectl apply -k argocd
+cd apps
+kubectl apply -f root-app.yaml
 ```
 ### Get passcode
 ```
