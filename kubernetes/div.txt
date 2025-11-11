@@ -6,15 +6,15 @@
 mirrors:
  docker.io:
     endpoint:
-      - "http://registry.cube.local:5000"
+    - "http://registry.cube.local:5000"
   registryi.cube.local:
     endpoint:
-      - "http://registry.cube.local:5000"
+    - "http://registry.cube.local:5000"
 
 mirrors:
   "*":
     endpoint:
-      - "http://registry.cube.local:5000"
+    - "http://registry.cube.local:5000"
 configs:
   "docker.io":
   "*":
