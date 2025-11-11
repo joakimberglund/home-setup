@@ -34,11 +34,19 @@ kubectl patch service argocd-server -n argocd --patch '{ "spec": { "type": "Load
 
 ## Apps installed via ArgoCD
 
-**Metallb**:
-Docker-registry:            Local registry
-Portainer:                  Kubernetes GUI
-Influxdb:                   Metrics Database
-Grafana:                    Metrics GUI
-MariaDB:                    SQL Database
-Omada Software Controller:  Omada GUI
+**Metallb**:                Kubernetes LoadBalancer
+
+**Docker-registry**:            Local registry
+
+**Portainer**:                  Kubernetes GUI
+
+**Influxdb**:                   Metrics Database
+
+**Grafana**:                    Metrics GUI
+
+**MariaDB**:                    SQL Database
+
+**Omada Software Controller**:  Omada GUI
+
 SMHI cron:                  Pull SMHI forecast data and push it to InfluxDB
+
