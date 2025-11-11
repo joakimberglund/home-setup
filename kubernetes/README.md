@@ -1,9 +1,14 @@
 # Installation order
 
+Security? It's internal only with no exposure to the internet thus minimal security setup.
+Not recommended for internet access!!
+
+
 ## K3S
-https://docs.k3s.io/quick-start
+Documentation: **https://docs.k3s.io/quick-start**
 
 ### Install
+Standard installation except disabeling servicelb since we will replace it with MetalLB.
 ```
 curl -sfL https://get.k3s.io | sh -s - --write-kubeconfig-mode 644 --disable servicelb
 echo "KUBECONFIG=/etc/rancher/k3s/k3s.yaml" >> /etc/environment
@@ -14,7 +19,7 @@ echo "KUBECONFIG=/etc/rancher/k3s/k3s.yaml" >> /etc/environment
 
 ## Argo CD
 Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
-https://rpi4cluster.com/k3s-argo-cd/
+*https://rpi4cluster.com/k3s-argo-cd/*
 ### Install
 ```
 cd home-setup/kubernetes
@@ -24,31 +29,28 @@ kubectl apply -f argocd
 ```
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ```
-### Install ArgoCD
+### Install ArgoCD OLD!!!!
 ```
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 kubectl patch service argocd-server -n argocd --patch '{ "spec": { "type": "LoadBalancer", "loadBalancerIP": "192.168.0.72" } }'
 ```
-## Print passcode
-```
-kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
-```
 
 ## Apps installed via ArgoCD
 
-**Metallb**:
+**Metallb**:                Kubernetes LoadBalancer
 
-Docker-registry:
+**Docker-registry**:            Local registry
 
-Portainer:
+**Portainer**:                  Kubernetes GUI
 
-Influxdb:
+**Influxdb**:                   Metrics Database
 
-Grafana:
+**Grafana**:                    Metrics GUI
 
-MariaDB:
+**MariaDB**:                    SQL Database
 
-Omada:
+**Omada Software Controller**:  Omada GUI
 
-SMHI cron:
+SMHI cron:                  Pull SMHI forecast data and push it to InfluxDB
+

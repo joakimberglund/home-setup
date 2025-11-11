@@ -1,7 +1,3 @@
-
-/etc/docker/daemon.json
-"insecure-registries":["host:port"]
-
 # /etc/rancher/k3s/registries.yaml
 #
 # No need for TLS/HTTPS for the local registry
@@ -24,19 +20,4 @@ configs:
   "*":
     tls:
       insecure_skip_verify: true
-
-
-
-
-systemctl edit --full k3s
-Addera --disable=servicelb sist
-
-
-
-Alloy
-------------
-helm repo add grafana https://grafana.github.io/helm-charts
-helm repo update
-kubectl create namespace <NAMESPACE>
-helm install --namespace <NAMESPACE> <RELEASE_NAME> grafana/alloy
 
