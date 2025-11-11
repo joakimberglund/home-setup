@@ -1,5 +1,9 @@
 # Installation order
 
+Security? It's internal only with no exposure to the internet thus minimal security setup.
+Not recommended for internet access!!
+
+
 ## K3S
 Documentation: **https://docs.k3s.io/quick-start**
 
