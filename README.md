@@ -1,11 +1,6 @@
 # Home-setup
-My home setup, among other things kubernetes
+My home server setup.
 
-# Kubernetes
+The setup is based on kubernetes (K3S) running on a Raspberry PI 5 (8G)
+The configuration and deployment is done via ArgoCD.
 
-In progress of converting everything to GitOps with Argo CD
-
-
-# Host
-
-## Alloy
