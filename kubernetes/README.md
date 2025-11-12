@@ -28,8 +28,7 @@ Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 ```
 cd home-setup/kubernetes
 kubectl apply -k argocd
-cd apps
-kubectl apply -f root-app.yaml
+kubectl apply -f apps/root-app.yaml
 ```
 ### Get passcode
 ```
@@ -58,5 +57,5 @@ kubectl patch service argocd-server -n argocd --patch '{ "spec": { "type": "Load
 
 **Omada Software Controller**:  Omada GUI
 
-SMHI cron:                  Pull SMHI forecast data and push it to InfluxDB
+**SMHI cron**:                  Pull SMHI forecast data and push it to InfluxDB
 
