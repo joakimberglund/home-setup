@@ -3,16 +3,15 @@
 Security? It's internal only with no exposure to the internet thus minimal security setup.
 Not recommended for internet access!!
 
-
-## K3S
-Documentation: **https://docs.k3s.io/quick-start**
-
 ## Git clone
+Make a clone of the Git repo since we need a few initial files to get stuff going
 ```
+apt-get -y install git
 git clone https://github.com/joakimberglund/home-setup.git
 ```
 
-### Install
+### K3S Install
+Documentation: **https://docs.k3s.io/quick-start**
 Standard installation except disabling servicelb since we will replace it with MetalLB.
 ```
 curl -sfL https://get.k3s.io | sh -s - --write-kubeconfig-mode 644 --disable servicelb
