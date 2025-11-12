@@ -8,22 +8,30 @@ Not recommended for internet access!!
 Documentation: **https://docs.k3s.io/quick-start**
 
 ## Git clone
+```
 git clone https://github.com/joakimberglund/home-setup.git
+```
 
 ### Install
 Standard installation except disabling servicelb since we will replace it with MetalLB.
 ```
 curl -sfL https://get.k3s.io | sh -s - --write-kubeconfig-mode 644 --disable servicelb
 echo "KUBECONFIG=/etc/rancher/k3s/k3s.yaml" >> /etc/environment
+```
+Copy in the updated registries file (for local registry)
+```
 cp home-setup/kubernetes/rancher-registries.yaml /etc/rancher/k3s/registries.yaml
 ```
 
 ## Helm
-[Install](helm.md)
+```
+./install-helm.sh
+```
 
 ## Argo CD
 Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 *https://rpi4cluster.com/k3s-argo-cd/*
+
 ### Install
 ```
 cd home-setup/kubernetes
