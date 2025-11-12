@@ -1,7 +1,6 @@
 #!/bin/sh
 
 cd
-apt -y install git
 mkdir -p ~/.kube
 k3s kubectl config view --raw > /root/.kube/config
 chmod 600 /root/.kube/config
