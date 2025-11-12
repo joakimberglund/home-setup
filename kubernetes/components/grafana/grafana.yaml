@@ -3,25 +3,17 @@ kind: PersistentVolume
 metadata:
   name: grafana-data-pv
   namespace: grafana
+  labels:
+    type: local
 spec:
+  storageClassName: local-path
   capacity:
     storage: 1Gi
-  volumeMode: Filesystem
   accessModes:
-  - ReadWriteOnce  
-  persistentVolumeReclaimPolicy: Retain
-  storageClassName: local-path
-  local:
+    - ReadWriteOnce
+  hostPath:
     path: /data/grafana
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: kubernetes.io/hostname
-          operator: In
-          values:
-          - k3s
-          - piserver
+    type: DirectoryOrCreate
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -44,6 +36,8 @@ metadata:
     app: grafana
   name: grafana
   namespace: grafana
+  annotations:
+    link.argocd.argoproj.io/external-link: http://grafana:3000/
 spec:
   selector:
     matchLabels:
