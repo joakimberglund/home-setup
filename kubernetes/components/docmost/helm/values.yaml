@@ -1,0 +1,4 @@
+docmost:
+  # -- Docmost externally accessible URL.
+  # -- Needs to be set for get docmost container working.
+  appUrl: "http://192.168.0.62"
