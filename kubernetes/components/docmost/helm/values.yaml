@@ -2,10 +2,15 @@ docmost:
   # -- Docmost externally accessible URL.
   # -- Needs to be set for get docmost container working.
   appUrl: "http://192.168.0.62:3000"
-ingress:
-  enabled: true
-  hosts:
-    - host: influxdb.local
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
+#ingress:
+#  enabled: true
+#  hosts:
+#    - host: influxdb.local
+#      paths:
+#        - path: /
+#          pathType: ImplementationSpecific
+
+service:
+  type: LoadBalancer
+  loadBalancerIP: 192.168.0.62
+  port: 3000
