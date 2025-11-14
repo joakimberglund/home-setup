@@ -1,1 +1,17 @@
-ddd
+apiVersion: v1
+kind: Service
+metadata:
+  name: docmost
+  namespace: docmost
+spec:
+  allocateLoadBalancerNodePorts: true
+  ports:
+  - name: docmost
+    port: 3000
+    protocol: TCP
+    targetPort: htto
+  selector:
+    app: docmost
+  sessionAffinity: None
+  type: LoadBalancer
+  loadBalancerIP: 192.168.0.62
