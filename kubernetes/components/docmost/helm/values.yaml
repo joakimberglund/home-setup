@@ -5,4 +5,4 @@ docmost:
 ingress:
   enabled: true
   hosts:
-    - host: 192.168.0.62
+    - host: influxdb.local
