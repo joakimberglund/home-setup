@@ -9,7 +9,7 @@ spec:
   - name: docmost
     port: 3000
     protocol: TCP
-    targetPort: http
+    targetPort: 3000
   selector:
     app: docmost
   sessionAffinity: None
