@@ -4,3 +4,5 @@ docmost:
   appUrl: "http://192.168.0.62:3000"
 ingress:
   enabled: true
+  hosts:
+    - host: 192.168.0.62
