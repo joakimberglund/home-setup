@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   sources:
-    - repoURL: 'https://github.com/docmost/charts'
+    - repoURL: 'https://acidsugarx.github.io/helm-open/'
       chart: docmost
       targetRevision: 0.1.3
     - repoURL: "https://github.com/joakimberglund/home-setup.git"
