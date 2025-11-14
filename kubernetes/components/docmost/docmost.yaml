@@ -9,7 +9,7 @@ spec:
   - name: docmost
     port: 3000
     protocol: TCP
-    targetPort: htto
+    targetPort: http
   selector:
     app: docmost
   sessionAffinity: None
