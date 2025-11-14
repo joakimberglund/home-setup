@@ -6,3 +6,6 @@ ingress:
   enabled: true
   hosts:
     - host: influxdb.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
