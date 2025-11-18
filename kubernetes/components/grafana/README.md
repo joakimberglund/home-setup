@@ -1,10 +1,5 @@
 # Installation
 
-## First install
-```
-kubectl apply -f grafana.yaml
-```
-
 ## Restore dashboards
 ### Stop to prep for restoring dashboards
 ```
