@@ -74,4 +74,4 @@ spec:
     app: registry
   sessionAffinity: None
   type: LoadBalancer
-  loadBalancerIP: 192.168.0.74
+  loadBalancerIP: 192.168.0.72
