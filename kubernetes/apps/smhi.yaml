@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: "https://github.com/joakimberglund/SMHI-forecast-to-InfluxDBv1.git"
     targetRevision: main
-    path: ""
+    path: "config"
   destination:
     server: https://kubernetes.default.svc
     namespace: smhi
