@@ -12,6 +12,9 @@ git clone https://github.com/joakimberglund/home-setup.git
 
 ### K3S Install
 Documentation: **https://docs.k3s.io/quick-start**
+
+Appending **cgroup_memory=1 cgroup_enable=memory** to */boot/firmware/cmdline.txt*
+
 Standard installation except disabling servicelb since we will replace it with MetalLB.
 ```
 curl -sfL https://get.k3s.io | sh -s - --write-kubeconfig-mode 644 --disable servicelb
