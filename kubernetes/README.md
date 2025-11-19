@@ -36,8 +36,8 @@ Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 *https://rpi4cluster.com/k3s-argo-cd/*
 
 ### Install
+This will install ArgoCD and the appload (app of apps) that loads in the rest of the deployment
 ```
-cd home-setup/kubernetes
 kubectl apply -k argocd
 kubectl apply -f apps/root-app.yaml
 ```
