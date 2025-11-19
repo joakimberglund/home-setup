@@ -27,6 +27,7 @@ cp home-setup/kubernetes/rancher-registries.yaml /etc/rancher/k3s/registries.yam
 
 ## Helm
 ```
+cd home-setup
 ./install-helm.sh
 ```
 
