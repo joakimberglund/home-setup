@@ -7,6 +7,6 @@ helm repo update
 kubectl create namespace metallb
 helm install metallb metallb/metallb --namespace metallb
 kubectl -n metallb get pod
-kubectl apply -f metallb-config.yaml
+kubectl apply -f metallb-config.yaml -n metallb
 ```
 
