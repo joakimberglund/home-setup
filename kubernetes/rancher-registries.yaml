@@ -7,7 +7,7 @@ mirrors:
   docker.io:
     endpoint:
     - "http://registry.cube.local:5000"
-  registryi.cube.local:
+  registry.cube.local:
     endpoint:
     - "http://registry.cube.local:5000"
 
