@@ -21,8 +21,7 @@ Här är manifesten för att köra hela databaskonfigurationen via miljövariabl
 1. Secret (för känslig data)
 Vi lägger både databaslösenordet och användarnamnet här för god sed.
 
-YAML
-
+```
 apiVersion: v1
 kind: Secret
 metadata:
@@ -32,12 +31,11 @@ stringData:
   # Ändra till dina riktiga värden
   user: "grafanauser"
   password: "ditt_starka_lösenord"
+```
 
 2. Deployment (med enbart miljövariabler)
-I stället för en ConfigMap använder vi prefixet GF_ följt av sektion och variabelnamn (t.ex. [database] type blir GF_DATABASE_TYPE).
 
-YAML
-
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -82,6 +80,6 @@ spec:
         # Valfritt: Om du vill tillåta osäkra anslutningar (t.ex. vid lokala tester)
         - name: GF_DATABASE_SSL_MODE
           value: "disable"
-
+```
 
 
