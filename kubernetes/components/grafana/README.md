@@ -32,6 +32,7 @@ stringData:
   # Ändra till dina riktiga värden
   user: "grafanauser"
   password: "ditt_starka_lösenord"
+
 2. Deployment (med enbart miljövariabler)
 I stället för en ConfigMap använder vi prefixet GF_ följt av sektion och variabelnamn (t.ex. [database] type blir GF_DATABASE_TYPE).
 
