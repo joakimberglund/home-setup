@@ -18,7 +18,9 @@ metadata:
 ```
 
 #### -1
- metallb
+metallb
+
+sealed-secret
 
 #### 0
 portainer
