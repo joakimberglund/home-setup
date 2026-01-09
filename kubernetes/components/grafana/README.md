@@ -21,17 +21,22 @@ Här är manifesten för att köra hela databaskonfigurationen via miljövariabl
 1. Secret (för känslig data)
 Vi lägger både databaslösenordet och användarnamnet här för god sed.
 
+
+Sealed secret
 ```
-apiVersion: v1
-kind: Secret
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
 metadata:
   name: grafana-db-credentials
-type: Opaque
-stringData:
-  # Ändra till dina riktiga värden
-  user: "grafanauser"
-  password: "ditt_starka_lösenord"
+  namespace: grafana
+spec:
+  encryptedData:
+    user: AgBy3i4OJSWK+PiTySYZZA9rO43cGDEq.....
+    password: AgBy3i4OJSWK+PiTySYZZA9rO43cGDEq.....
 ```
+
+
+
 
 2. Deployment (med enbart miljövariabler)
 
