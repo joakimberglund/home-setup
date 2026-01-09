@@ -17,19 +17,22 @@ metadata:
     argocd.argoproj.io/sync-wave: "-1"
 ```
 
- ## -1
+#### -1
  metallb
 
- ## 0
+#### 0
 portainer
 
- ## 1
+#### 1
 mariadb
+
 influxdb
+
 docker-registry
 
-## 2
+#### 2
 grafana
+
 omada-controller
 
 ## 3
