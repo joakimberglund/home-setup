@@ -89,12 +89,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: youtube-to-rtsp
+  name: mediamtx-service
   namespace: youtube-to-rtsp
 spec:
   allocateLoadBalancerNodePorts: true
   ports:
-  - name: youtube-to-rtsp
+  - name: mediamtx
     port: 8554
     protocol: TCP
     targetPort: mediamtx
