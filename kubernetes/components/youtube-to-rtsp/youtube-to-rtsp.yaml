@@ -68,7 +68,7 @@ spec:
               (
                 while true; do
                   REAL_URL=$(yt-dlp -g -f 'best[vcodec^=avc1]' "$stream_url")
-                  ffmpeg -re -i "$REAL_URL" -c copy -f rtsp "rtsp://mediamtx-service:8554/$stream_name"
+                  ffmpeg -re -i "$REAL_URL" -c copy -an -f rtsp "rtsp://mediamtx-service:8554/$stream_name"
                   echo "Ström $stream_name dog, startar om..."
                   sleep 10
                 done
