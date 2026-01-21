@@ -49,10 +49,6 @@ spec:
       containers:
       - name: streamer
         image: alpine:latest
-        ports:
-          - containerPort: 8554
-            name: youtube-to-rtsp
-            protocol: TCP
         volumeMounts:
         - name: config-volume
           mountPath: /etc/streams
@@ -94,10 +90,10 @@ metadata:
 spec:
   allocateLoadBalancerNodePorts: true
   ports:
-  - name: mediamtx
+  - name: rtsp
     port: 8554
     protocol: TCP
-    targetPort: mediamtx
+    targetPort: 8554
   selector:
     app: mediamtx
   sessionAffinity: None
