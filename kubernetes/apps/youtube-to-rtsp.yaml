@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: youtube-to-rtsp
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/joakimberglund/home-setup.git'
+    targetRevision: main
+    path: "kubernetes/components/youtube-to-rtsp"
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: youtube-to-rtsp
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true
