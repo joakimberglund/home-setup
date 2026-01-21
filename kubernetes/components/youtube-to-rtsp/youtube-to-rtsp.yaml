@@ -13,6 +13,27 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: mediamtx
+  namespace: youtube-to-rtsp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mediamtx
+  template:
+    metadata:
+      labels:
+        app: mediamtx
+    spec:
+      containers:
+      - name: mediamtx
+        image: bluenviron/mediamtx:latest
+        ports:
+        - containerPort: 8554 # RTSP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
   name: youtube-multi-streamer
   namespace: youtube-to-rtsp
 spec:
@@ -76,9 +97,9 @@ spec:
   - name: youtube-to-rtsp
     port: 8554
     protocol: TCP
-    targetPort: youtube-to-rtsp
+    targetPort: mediamtx
   selector:
-    app: youtube-to-rtsp
+    app: mediamtx
   sessionAffinity: None
   type: LoadBalancer
   loadBalancerIP: 192.168.0.79
