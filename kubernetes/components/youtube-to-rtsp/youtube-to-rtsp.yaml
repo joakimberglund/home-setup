@@ -6,9 +6,9 @@ metadata:
 data:
   # Format: "stream_namn: youtube_url"
   NSF: "https://www.youtube.com/watch?v=mhJRzQsLZGg"
-  Avid-R1: "https://www.youtube.com/watch?v=inCQ49QGmqQ"
-  Avid-R2: "https://www.youtube.com/watch?v=tS2PHJmvJzo"
-  Avid-R3: "https://www.youtube.com/watch?v=TyXUaqscyiU"
+#  Avid-R1: "https://www.youtube.com/watch?v=inCQ49QGmqQ"
+#  Avid-R2: "https://www.youtube.com/watch?v=tS2PHJmvJzo"
+#  Avid-R3: "https://www.youtube.com/watch?v=TyXUaqscyiU"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -67,7 +67,7 @@ spec:
               # Kör varje stream i bakgrunden i en oändlig loop
               (
                 while true; do
-                  REAL_URL=$(yt-dlp -g --ignore-dynamic-mpd --hls-split-discontinuity -f 'best[vcodec^=avc1]' "$stream_url")
+                  REAL_URL=$(yt-dlp -g --print-traffic -v --hls-use-mpegts --wait-for-video 2 --no-check-certificates --ignore-dynamic-mpd --hls-split-discontinuity -f 'best[vcodec^=avc1]' "$stream_url")
                   ffmpeg -re -i "$REAL_URL" -c copy -an -f rtsp "rtsp://mediamtx-service:8554/$stream_name"
                   echo "Ström $stream_name dog, startar om..."
                   sleep 10
