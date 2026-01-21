@@ -67,7 +67,7 @@ spec:
               # Kör varje stream i bakgrunden i en oändlig loop
               (
                 while true; do
-                  REAL_URL=$(yt-dlp -g -v --hls-use-mpegts --wait-for-video 2 --no-check-certificates --ignore-dynamic-mpd --hls-split-discontinuity -f 'best[vcodec^=avc1]' "$stream_url")
+                  REAL_URL=$(yt-dlp -g -v --buffer-size 16384 --hls-use-mpegts --wait-for-video 2 --no-check-certificates --ignore-dynamic-mpd --hls-split-discontinuity -f 'best[vcodec^=avc1]' "$stream_url")
                   ffmpeg -re -i "$REAL_URL" -c copy -an -f rtsp "rtsp://mediamtx-service:8554/$stream_name"
                   echo "Ström $stream_name dog, startar om..."
                   sleep 10
