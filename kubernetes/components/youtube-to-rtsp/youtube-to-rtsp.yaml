@@ -51,7 +51,7 @@ metadata:
   name: youtube-multi-streamer
   namespace: youtube-to-rtsp
 spec:
-  replicas: 1
+  replicas: 0
   selector:
     matchLabels:
       app: multi-streamer
