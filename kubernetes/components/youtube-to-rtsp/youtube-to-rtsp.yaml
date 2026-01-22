@@ -30,6 +30,20 @@ spec:
         image: bluenviron/mediamtx:latest
         ports:
         - containerPort: 8554 # RTSP
+        - containerPort: 8888 # HLS
+        - containerPort: 8889 # WebRTC
+        - containerPort: 9997 # API
+        livenessProbe:
+          tcpSocket:
+            port: 8554
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /v3/config/paths/list # Kolla om API:et svarar
+            port: 9997
+          initialDelaySeconds: 3
+          periodSeconds: 5
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -95,6 +109,18 @@ spec:
     port: 8554
     protocol: TCP
     targetPort: 8554
+  - name: hls
+    port: 8888
+    protocol: TCP
+    targetPort: 8888
+  - name: webrtc
+    port: 8889
+    protocol: TCP
+    targetPort: 8889
+  - name: api
+    port: 9997
+    protocol: TCP
+    targetPort: 997
   selector:
     app: mediamtx
   sessionAffinity: None
