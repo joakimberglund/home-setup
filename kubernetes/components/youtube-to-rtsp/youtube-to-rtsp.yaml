@@ -72,6 +72,12 @@ spec:
             apk add --no-cache ffmpeg yt-dlp;
             curl -fsSL https://deno.land/install.sh | sh;
             
+            while [ ! -f i/tmp/cookies.txt ]; do
+              echo "Väntar på /tmp/cookies.txt..."
+              sleep 10
+            done
+            echo "Fil skapad, fortsätter"
+            
             # Skript som loopar igenom alla konfigurerade strömmar
             for stream_file in /etc/streams/*; do
               stream_name=$(basename $stream_file)
@@ -82,7 +88,7 @@ spec:
               # Kör varje stream i bakgrunden i en oändlig loop
               (
                 while true; do
-                  REAL_URL=$(yt-dlp -g -v --no-part --live-from-start --buffer-size 16384 --hls-use-mpegts --wait-for-video 2 --no-check-certificates --ignore-dynamic-mpd --hls-split-discontinuity -f 'best[vcodec^=avc1]' "$stream_url")
+                  REAL_URL=$(yt-dlp -g -v --no-part --cookies /tmp/cookies.txt --buffer-size 16384 --hls-use-mpegts --wait-for-video 2 --no-check-certificates --ignore-dynamic-mpd --hls-split-discontinuity -f 'best[vcodec^=avc1]' "$stream_url")
                   ffmpeg -re -i "$REAL_URL" -c copy -an -f rtsp "rtsp://mediamtx-service:8554/$stream_name"
                   echo "Ström $stream_name dog, startar om..."
                   sleep 10
