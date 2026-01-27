@@ -72,7 +72,7 @@ spec:
             apk add --no-cache ffmpeg yt-dlp;
             curl -fsSL https://deno.land/install.sh | sh;
             
-            while [ ! -f i/tmp/cookies.txt ]; do
+            while [ ! -s i/tmp/cookies.txt ]; do
               echo "Väntar på /tmp/cookies.txt..."
               sleep 10
             done
