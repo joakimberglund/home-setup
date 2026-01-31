@@ -136,9 +136,9 @@ spec:
         - name: SKIP_USERMOD
           value: "true"
         volumeMounts:
-        - name: omada-data
+        - name: omada-data-pv
           mountPath: /opt/tplink/EAPController/data
-        - name: omada-logs
+        - name: omada-logs-pv
           mountPath: /opt/tplink/EAPController/logs
       volumes:
       - name: omada-data
