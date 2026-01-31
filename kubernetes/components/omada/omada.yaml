@@ -212,3 +212,4 @@ spec:
     port: 29817
     targetPort: 29817
     protocol: TCP
+
