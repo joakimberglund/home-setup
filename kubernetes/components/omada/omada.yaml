@@ -24,7 +24,7 @@ metadata:
 spec:
   storageClassName: local-path
   capacity:
-    storage: 1Gi
+    storage: 5Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
@@ -42,7 +42,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
+      storage: 5Gi
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -62,7 +62,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: omada-controller
-  namespace: omada
 spec:
   replicas: 1
   strategy:
@@ -103,6 +102,8 @@ spec:
           value: "8088"
         - name: PORTAL_HTTPS_PORT
           value: "8843"
+        - name: UPGRADE_HTTPS_PORT
+          value: "8043"
         - name: PORT_APP_DISCOVERY
           value: "27001"
         - name: PORT_ADOPT_V1
